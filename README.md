@@ -1,2 +1,0 @@
-# QuizAPP
-Quiz Web Application

@@ -63,19 +63,26 @@ export default function Navbar({ logoSrc }) {
       <div className={navbarStyles.container}>
         {/* LEFT: Logo */}
         <div className={navbarStyles.logoContainer}>
-          <Link to="/" className={navbarStyles.logoButton}>
-            <div className={navbarStyles.logoInner}>
-              <img
-                src={
-                  logoSrc ||
-                  "https://yt3.googleusercontent.com/eD5QJD-9uS--ekQcA-kDTCu1ZO4d7d7BTKLIVH-EySZtDVw3JZcc-bHHDOMvxys92F7rD8Kgfg=s900-c-k-c0x00ffffff-no-rj"
-                }
-                alt="QuizMaster logo"
-                className={navbarStyles.logoImage}
-              />
-            </div>
-          </Link>
-        </div>
+  <Link to="/" className={navbarStyles.logoButton}>
+    <div className={navbarStyles.logoInner}>
+      <img
+        src={
+          logoSrc
+            ? logoSrc
+            : "https://yt3.googleusercontent.com/eD5QJD-9uS--ekQcA-kDTCu1ZO4d7d7BTKLIVH-EySZtDVw3JZcc-bHHDOMvxys92F7rD8Kgfg=s900-c-k-c0x00ffffff-no-rj"
+        }
+        alt="QuizMaster Logo"
+        className={navbarStyles.logoImage}
+        onError={(e) => {
+          // fallback if image fails to load
+          e.target.src =
+            "https://yt3.googleusercontent.com/eD5QJD-9uS--ekQcA-kDTCu1ZO4d7d7BTKLIVH-EySZtDVw3JZcc-bHHDOMvxys92F7rD8Kgfg=s900-c-k-c0x00ffffff-no-rj";
+        }}
+      />
+    </div>
+  </Link>
+</div>
+
 
         {/* CENTER: Title */}
         <div className={navbarStyles.titleContainer}>
