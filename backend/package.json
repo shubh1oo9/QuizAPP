@@ -6,7 +6,6 @@
   "type": "module",
   "scripts": {
     "start": "node index.js"
-    "build": "cd ../frontend && npm install && npm run dev"
   },
   "author": "",
   "license": "ISC",
